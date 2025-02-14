@@ -26,7 +26,7 @@
             padding: 20px;
             font-size: 40px;
             font-weight: bold;
-            font-style: italic;
+            font-style: arial;
             text-align: left;
         }
 
@@ -77,13 +77,13 @@
 
         .gallery-swipe {
             display: flex;
-            transition: transform 0.5s ease-out;
+            transition: transform 0.5s ease-in-out;
             width: 100%;
         }
 
         .gallery-swipe img {
             width: 100%;
-            aspect-ratio: 5 / 4;
+            aspect-ratio: 3 / 4;
             object-fit: cover;
             border-radius: 10px;
             flex: 0 0 100%;
@@ -101,7 +101,7 @@
         }
 
         .swipe button {
-            background-color: #43a6bf;
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             padding: 10px;
@@ -118,7 +118,7 @@
         }
 
         .swipe button:hover {
-            background-color: #43a6bf;
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         .footer {
@@ -133,7 +133,7 @@
     </style>
 </head>
 <body>
-    <div class="header">LHEANN CABASE</div>
+    <div class="header">MARC GIL L. ERQUITA</div>
     <div class="container">
         <div class="sidebar">
              <a href="https://shunt206.github.io/buh/index.html"><button>About ME</button></a>
