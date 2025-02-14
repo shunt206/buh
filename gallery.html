@@ -13,8 +13,8 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: white;
+            background-color: #faf7f7;
+            color: black;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -22,12 +22,12 @@
         }
 
         .header {
-            background-color: #4a4a4a;
+            background-color: #75c0eb;
             padding: 20px;
             font-size: 40px;
             font-weight: bold;
             font-style: italic;
-            text-align: center;
+            text-align: left;
         }
 
         .container {
@@ -44,7 +44,7 @@
         .sidebar button {
             width: 200px;
             padding: 15px;
-            background-color: #d3d3d3;
+            background-color: #6cacf5;
             border: none;
             border-radius: 10px;
             font-weight: bold;
@@ -54,7 +54,7 @@
         }
 
         .sidebar button.active {
-            background-color: #808080;
+            background-color: #0a0a0a;
             color: white;
         }
         
@@ -66,30 +66,30 @@
         .gallery-section {
             text-align: center;
             padding: 20px;
-            background-color: #2a2a2a;
+            background-color: #43a6bf;
             border-radius: 10px;
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
         }
 
-        .gallery-carousel {
+        .gallery-swipe {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 0.5s ease-out;
             width: 100%;
         }
 
-        .gallery-carousel img {
+        .gallery-swipe img {
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 5 / 4;
             object-fit: cover;
             border-radius: 10px;
             flex: 0 0 100%;
         }
 
-        .carousel-controls {
+        .swipe-controls {
             position: absolute;
             top: 50%;
             width: 100%;
@@ -100,8 +100,8 @@
             box-sizing: border-box;
         }
 
-        .carousel-controls button {
-            background-color: rgba(0, 0, 0, 0.5);
+        .swipe button {
+            background-color: #43a6bf;
             color: white;
             border: none;
             padding: 10px;
@@ -117,13 +117,13 @@
             margin: 0 5px;
         }
 
-        .carousel-controls button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+        .swipe button:hover {
+            background-color: #43a6bf;
         }
 
         .footer {
             padding: 20px;
-            background-color: black;
+            background-color: #75c0eb;
             font-size: 14px;
             border-radius: 20px;
             width: 90%;
@@ -136,16 +136,16 @@
     <div class="header">LHEANN CABASE</div>
     <div class="container">
         <div class="sidebar">
-            <a href="https://lheannc.github.io/personalwebb/index.html"><button>About ME</button></a>
-            <a href="https://lheannc.github.io/personalwebb/subjects-taken.html"><button>Subjects Taken</button></a>
-            <a href="https://lheannc.github.io/personalwebb/enrolled.html"><button>Enrolled</button></a>
-            <a href="https://lheannc.github.io/personalwebb/contact.html"><button>Contact Me</button></a>
-            <a href="https://lheannc.github.io/personalwebb/fav.html"><button>My Favorites</button></a>
-            <a href="https://lheannc.github.io/personalwebb/gallery.html"><button>Gallery</button></a>
+             <a href="https://shunt206.github.io/buh/index.html"><button>About ME</button></a>
+            <a href="https://shunt206.github.io/buh/subjects.html"><button>Subjects Taken</button></a>
+            <a href="https://shunt206.github.io/buh/enrolled.html"><button>Enrolled</button></a>
+            <a href="https://shunt206.github.io/buh/contact.html"><button>Contact Me</button></a>
+            <a href="https://shunt206.github.io/buh/favorites.html"><button>My Favorites</button></a>
+            <a href="https://shunt206.github.io/buh/gallery.html"><button>Gallery</button></a>
         </div>
         <div class="content">
             <div id="gallerySection" class="gallery-section">
-                <div class="gallery-carousel" style="transform: translateX(0%);">
+                <div class="gallery-swipe" style="transform: translateX(0%);">
                     <img src="./Gallery_files/pic1.jpg" alt="Image 1">
                     <img src="./Gallery_files/pic2.jpg" alt="Image 2">
                     <img src="./Gallery_files/pic3.jpg" alt="Image 3">
@@ -157,7 +157,7 @@
                     <img src="./Gallery_files/pic9.jpg" alt="Image 9">
                     <img src="./Gallery_files/pic10.jpg" alt="Image 10">
                 </div>
-                <div class="carousel-controls">
+                <div class="swipe-controls">
                     <button onclick="prevSlide()">❮</button>
                     <button onclick="nextSlide()">❯</button>
                 </div>
@@ -170,11 +170,11 @@
         let currentIndex = 0;
 
         function showSlide(index) {
-            const carousel = document.querySelector('.gallery-carousel');
-            const totalSlides = document.querySelectorAll('.gallery-carousel img').length;
+            const swipe = document.querySelector('.gallery-swipe');
+            const totalSlides = document.querySelectorAll('.gallery-swipe img').length;
             if (index >= totalSlides) currentIndex = 0;
             if (index < 0) currentIndex = totalSlides - 1;
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            swipe.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
 
         function nextSlide() {
